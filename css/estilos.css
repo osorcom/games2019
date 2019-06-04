@@ -8,3 +8,52 @@ canvas{
   border: 1px solid gray;
   margin: 10px;
 }
+
+/*Part del index*/
+body{
+background-color: #EAFFEF;
+
+}
+
+h1{
+font-family: Verdana;
+text-align: center;
+font-size: 55px;
+
+}
+h2{
+font-family: Verdana;
+font-size: 25px;
+margin:1%;
+
+}
+
+ul > li > a{
+list-style:none;
+text-decoration:none;
+margin: 2%;
+font-size: 24px;
+background-color: #ffedbf;
+color: darkred;
+}
+
+ul > li > a:hover{
+
+margin: 2%;
+font-size: 30px;
+background-color: darkred;
+color:#ffedbf ;
+}
+
+
+
+
+
+
+
+/*Part dels joc1*/
+
+
+
+
+/*Part del joc2*/
