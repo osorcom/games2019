@@ -1,0 +1,81 @@
+alumno@alumnoubuntu:~$ git clone https://github.com/osorcom/games2019.git
+Clonando en 'games2019'...
+remote: Enumerating objects: 21, done.
+remote: Counting objects: 100% (21/21), done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 21 (delta 1), reused 17 (delta 1), pack-reused 0
+Desempaquetando objetos: 100% (21/21), listo.
+alumno@alumnoubuntu:~$ git status
+fatal: no es un repositorio git (ni ninguno de los directorios superiores): .git
+alumno@alumnoubuntu:~$ git clone --branch <development> https://github.com/osorcom/games2019.git
+bash: development: No existe el archivo o el directorio
+alumno@alumnoubuntu:~$ cd web
+alumno@alumnoubuntu:~/web$ cd games2019
+alumno@alumnoubuntu:~/web/games2019$ cd
+alumno@alumnoubuntu:~$ cd games2019
+bash: cd: games2019: No existe el archivo o el directorio
+alumno@alumnoubuntu:~$ cd web
+alumno@alumnoubuntu:~/web$ cd games2019
+alumno@alumnoubuntu:~/web/games2019$ git branch -a development
+fatal: opciones -a y -r para 'git branch' no tienen sentido con un nombre de rama
+alumno@alumnoubuntu:~/web/games2019$ git branch development
+alumno@alumnoubuntu:~/web/games2019$ git checkout -b development origin/development
+fatal: Una rama llamada 'development' ya existe.
+alumno@alumnoubuntu:~/web/games2019$ git branch -a
+  development
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/development
+  remotes/origin/feature_data_access
+  remotes/origin/master
+alumno@alumnoubuntu:~/web/games2019$ git checkout -b development origin/development
+fatal: Una rama llamada 'development' ya existe.
+alumno@alumnoubuntu:~/web/games2019$ git checkout development
+Cambiado a rama 'development'
+alumno@alumnoubuntu:~/web/games2019$ git branch
+* development
+  master
+alumno@alumnoubuntu:~/web/games2019$ git pull development
+fatal: 'development' does not appear to be a git repository
+fatal: No se pudo leer del repositorio remoto.
+
+Por favor asegúrese que tiene los permisos de acceso correctos
+y que el repositorio existe.
+alumno@alumnoubuntu:~/web/games2019$ git pull origin  development
+Desde https://github.com/osorcom/games2019
+ * branch            development -> FETCH_HEAD
+Actualizando 9610143..37ff847
+Fast-forward
+ .gitignore      |  0
+ css/estilos.css | 10 ++++++++++
+ index.html      | 19 +++++++++++++++++++
+ juego1.html     | 12 ++++++++++++
+ 4 files changed, 41 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 css/estilos.css
+ create mode 100644 index.html
+ create mode 100644 juego1.html
+alumno@alumnoubuntu:~/web/games2019$ git branch feature_juego1
+alumno@alumnoubuntu:~/web/games2019$ git branch
+* development
+  feature_juego1
+  master
+alumno@alumnoubuntu:~/web/games2019$ git branch -a
+* development
+  feature_juego1
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/development
+  remotes/origin/feature_data_access
+  remotes/origin/master
+alumno@alumnoubuntu:~/web/games2019$ git checkout feature_juego1
+Cambiado a rama 'feature_juego1'
+alumno@alumnoubuntu:~/web/games2019$ git pull origin feature_juego1
+fatal: Couldn't find remote ref feature_juego1
+alumno@alumnoubuntu:~/web/games2019$ git branch
+  development
+* feature_juego1
+  master
+alumno@alumnoubuntu:~/web/games2019$ ^C
+alumno@alumnoubuntu:~/web/games2019$ 
+
