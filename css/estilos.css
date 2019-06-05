@@ -8,3 +8,15 @@ canvas{
   border: 1px solid gray;
   margin: 10px;
 }
+
+#hall{
+    padding: 7px;
+      background-image: linear-gradient(to right, indigo,violet); 
+    border-radius: 20px 20px 20px 20px;
+-moz-border-radius: 20px 20px 20px 20px;
+-webkit-border-radius: 20px 20px 20px 20px;
+border: 0px solid #000000;
+    -webkit-box-shadow: 7px 7px 15px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: 7px 7px 15px 1px rgba(0,0,0,0.75);
+box-shadow: 7px 7px 15px 1px rgba(0,0,0,0.75);
+}
