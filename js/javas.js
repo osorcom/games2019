@@ -3,14 +3,14 @@ var ctx = canvas.getContext("2d");
 var ballRadius = 10;
 var x = canvas.width/2;
 var y = canvas.height-30;
-var dx = 10;
-var dy = -10;
+var dx = 7;
+var dy = -7;
 var paddleHeight = 10;
 var paddleWidth = 100;
 var paddleX = (canvas.width-paddleWidth)/2;
 var rightPressed = false;
 var leftPressed = false;
-var brickRowCount = 10;
+var brickRowCount = 14;
 var brickColumnCount = 6;
 var brickWidth = 75;
 var brickHeight = 20;
@@ -18,7 +18,7 @@ var brickPadding = 10;
 var brickOffsetTop = 30;
 var brickOffsetLeft = 30;
 var score = 0;
-var lives = 6;
+var lives = 4;
 
 var bricks = [];
 for(c=0; c<brickColumnCount; c++) {
@@ -64,7 +64,7 @@ function collisionDetection() {
                     b.status = 0;
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
-                        alert("YOU WIN, CONGRATS!");
+                        alert("Has Ganado!");
                         document.location.reload();
                     }
                 }
@@ -76,14 +76,14 @@ function collisionDetection() {
 function drawBall() {
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-    ctx.fillStyle = "#0095DD";
+    ctx.fillStyle = "#ff001b";
     ctx.fill();
     ctx.closePath();
 }
 function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-    ctx.fillStyle = "#0095DD";
+    ctx.fillStyle = "#ff6c00";
     ctx.fill();
     ctx.closePath();
 }
@@ -97,7 +97,7 @@ function drawBricks() {
                 bricks[c][r].y = brickY;
                 ctx.beginPath();
                 ctx.rect(brickX, brickY, brickWidth, brickHeight);
-                ctx.fillStyle = "#0095DD";
+                ctx.fillStyle = "#ffb900";
                 ctx.fill();
                 ctx.closePath();
             }
@@ -106,12 +106,12 @@ function drawBricks() {
 }
 function drawScore() {
     ctx.font = "16px Arial";
-    ctx.fillStyle = "#0095DD";
+    ctx.fillStyle = "#ffb900";
     ctx.fillText("Score: "+score, 8, 20);
 }
 function drawLives() {
     ctx.font = "16px Arial";
-    ctx.fillStyle = "#0095DD";
+    ctx.fillStyle = "#ffb900";
     ctx.fillText("Lives: "+lives, canvas.width-65, 20);
 }
 
@@ -137,14 +137,14 @@ function draw() {
         else {
             lives--;
             if(!lives) {
-                alert("GAME OVER");
+                alert("Game Over");
                 document.location.reload();
             }
             else {
                 x = canvas.width/2;
                 y = canvas.height-30;
-                dx = 10;
-                dy = -10;
+                dx = 9;
+                dy = -9;
                 paddleX = (canvas.width-paddleWidth)/2;
             }
         }
