@@ -17,8 +17,14 @@ background-color: #EAFFEF;
 
 h1{
 font-family: Verdana;
-text-align: center;
+
 font-size: 55px;
+padding: 1%;
+margin: 2%;
+text-align: center;
+
+
+
 
 }
 h2{
