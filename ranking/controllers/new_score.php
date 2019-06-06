@@ -1,7 +1,7 @@
 <?php
 use Psr\Container\ContainerInterface;
 
-class BestScore
+class NewScore
 {
    protected $container;
 
@@ -10,8 +10,9 @@ class BestScore
    }
 
    public function __invoke($request, $response, $args) {
+     $in = $request->getParsedBody();
      try{
-       $out = $this->container->bd->getScores($args['game']);
+       $out = $this->container->bd->addScore($args['game'], $in['player'], $in['score']);
      }catch(PDOException $e){
        $out = $e;
      }

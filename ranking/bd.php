@@ -13,12 +13,36 @@ class BD{
     try {
       $dsn = ConfigDB::SGBD.":host=".ConfigDB::HOST.";dbname=".ConfigDB::NAME;
       $this->con = new PDO($dsn, ConfigDB::USER, ConfigDB::PASS);
-      $this->con->setAttribute(PDO::ATTRR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $this->con->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
     } catch (PDOException $e){
       throw $e;
     }
   }
+
+
+  public function addScore($game, $player, $score){
+    $sql = "insert into scores(player, game_id, score)
+            values('$player', (select id from games where name='$game'), $score);";
+    $n_rows = $this->con->exec($sql);
+
+    $sql = "select count(*) as position
+            from scores s, games g
+            where s.game_id=g.id and g.name='$game' and score>=$score;";
+    $res = $this->con->query($sql);
+    return $res->fetchObject();
+  }
+
+
+  public function getScores($game){
+    $sql = "select player, score, time_stamp
+            from scores s, games g
+            where s.game_id=g.id and g.name='$game'
+            order by score, time_stamp;";
+    $res = $this->con->query($sql);
+    return $res->fetchAll();
+  }
+
 
   public static function installBD(){
     try{
