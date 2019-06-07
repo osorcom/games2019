@@ -1,0 +1,15 @@
+{
+    "require": {
+        "slim/slim": "^3.12"
+    },
+
+    "autoload": {
+        "classmap": [
+            "./bd.php"
+        ]
+    },
+
+    "scripts": {
+      "pre-install-cmd": "games2019\\data\\BD::installBD"
+    }
+}
