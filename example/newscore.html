@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+    #info{
+      border: 1px solid green;
+      border-radius: 10px;
+      margin: 1em auto;
+      background-color: rgb(200,255,200);
+      padding: 10px;
+      transition: 1s;
+      width: 200px;
+      font-size: 24px;
+    }
+
+    #info:empty{
+      opacity: 0;
+      transform: rotate(180deg);
+    }
+  </style>
+  <body>
+    <h1>Ejemplo nueva puntuación - estrellita</h1>
+    <div id="info"></div>
+    <button type="button">Añadir a estrellita</button>
+
+    <script src="../js/ranking.js"></script>
+    <script>
+      function mostrarDatos(datos){
+        document.querySelector("#info").innerHTML = "Posición: "+datos.position;
+      }
+
+      document.querySelector("button").addEventListener("click", function(){
+          var puntos = parseInt(Math.random()*300);
+          sendScore("estrellita", "yo", puntos, mostrarDatos);
+      })
+    </script>
+  </body>
+</html>

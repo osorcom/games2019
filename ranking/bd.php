@@ -23,7 +23,7 @@ class BD{
 
   public function addScore($game, $player, $score){
     $sql = "insert into scores(player, game_id, score)
-            values('$player', (select id from games where name='$game'), $score);";
+            values('$player', (select id from games where name='$game'), $score)";
     $n_rows = $this->con->exec($sql);
 
     $sql = "select count(*) as position
