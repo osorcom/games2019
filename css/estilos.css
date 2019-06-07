@@ -3,8 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 canvas{
   border: 1px solid gray;
   margin: 10px;
+}#bblock{
+  background-image: url(../fondo.jpg)
 }
