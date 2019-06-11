@@ -30,3 +30,11 @@ CREATE TABLE IF NOT EXISTS scores (
   PRIMARY KEY (time_stamp,player,game_id),
   FOREIGN KEY (game_id) REFERENCES games(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Insert juegos disponibles
+--
+INSERT INTO games(name) values ('ahorcado');
+INSERT INTO games(name) values ('break_block');
