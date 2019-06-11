@@ -14,7 +14,7 @@
       function mostrarDatosEnTabla(datos){
         var out = "";
         for(var i=0; i<datos.length; i++){
-          out+=`<tr><td>${datos[i].player}</td><td>${datos[i].score}</td><td>${datos[i].time_stamp}</td></tr>`;
+          out+=`<tr><td>${i+1}</td><td>${datos[i].player}</td><td>${datos[i].score}</td><td>${datos[i].time_stamp}</td></tr>`;
         }
         document.querySelector("table").innerHTML = out;
       }
