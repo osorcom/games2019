@@ -1,0 +1,49 @@
+header div {
+
+    padding: 8px;
+    float: left;
+    background-image: linear-gradient(to right, indigo, violet);
+    border-radius: 20px 20px 20px 20px;
+    -moz-border-radius: 20px 20px 20px 20px;
+    -webkit-border-radius: 20px 20px 20px 20px;
+    border: 0px solid #000000;
+    -webkit-box-shadow: 7px 7px 15px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 7px 7px 15px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 7px 7px 15px 1px rgba(0, 0, 0, 0.75);
+}
+
+header h1 {
+    text-align: center;
+
+}
+
+header p {
+    text-align: center;
+}
+
+canvas {
+    display: block;
+    margin: auto;
+    align: center;
+    border: solid;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+canvas {
+    opacity: 1;
+    animation: fadeIn 5s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

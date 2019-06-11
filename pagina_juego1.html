@@ -7,73 +7,77 @@
     <link rel="stylesheet" href="css/estilos.css">
     <script src=efectos.js></script>
     <style>
-        header div{
-            
+        header div {
+
             padding: 8px;
             float: left;
-            background-image: linear-gradient(to right, indigo,violet); 
-    border-radius: 20px 20px 20px 20px;
--moz-border-radius: 20px 20px 20px 20px;
--webkit-border-radius: 20px 20px 20px 20px;
-border: 0px solid #000000;
-    -webkit-box-shadow: 7px 7px 15px 1px rgba(0,0,0,0.75);
--moz-box-shadow: 7px 7px 15px 1px rgba(0,0,0,0.75);
-box-shadow: 7px 7px 15px 1px rgba(0,0,0,0.75);
+            background-image: linear-gradient(to right, indigo, violet);
+            border-radius: 20px 20px 20px 20px;
+            -moz-border-radius: 20px 20px 20px 20px;
+            -webkit-border-radius: 20px 20px 20px 20px;
+            border: 0px solid #000000;
+            -webkit-box-shadow: 7px 7px 15px 1px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 7px 7px 15px 1px rgba(0, 0, 0, 0.75);
+            box-shadow: 7px 7px 15px 1px rgba(0, 0, 0, 0.75);
         }
-        
-        header h1{
+
+        header h1 {
             text-align: center;
-            
+
         }
-        
-        header p{
+
+        header p {
             text-align: center;
         }
-        
-        canvas{
+
+        canvas {
             display: block;
             margin-left: auto;
             margin-right: auto;
             margin-top: 30px;
             margin-bottom: 30px;
         }
-        
-        a{
+
+        a {
             text-decoration: none;
             color: white;
         }
-        
-        canvas{
-  opacity: 1;
-  animation: fadeIn 5s ease;
-}
 
-@keyframes fadeIn{
-  0%{
-    opacity: 0;
-  }
-  100%{
-    opacity: 1;
-  }
-}
-        
+        canvas {
+            display: block;
+            margin: auto;
+            align: center;
+            border: solid;
+            opacity: 1;
+            animation: fadeIn 5s ease;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 
 <body>
     <header>
         <h1 id=colors>Ahorcado!</h1>
-        <div><p><a href="index.html">Home</a></p></div>
+        <div>
+            <p><a href="index.html">Home</a></p>
+        </div>
         <p>El mítico juego del ahorcado ¡Ahora para PC!</p>
         <p>¿Por qué usar lápiz y papel cuando puedes sentarte delante de una pantalla durante horas?</p>
     </header>
     <main>
-    <canvas id="juego1" width="1200" height="800"></canvas>
-</main>
-<aside id=hall>
-    <h2>Hall of Fame</h2>
-    
-</aside>
-</body>
+        <canvas id="juego1" width="1200" height="800"></canvas>
+    </main>
+    <aside id=hall>
+        <h2>Hall of Fame</h2>
 
-</html>
+    </aside>
+</body></html>
