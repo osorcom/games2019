@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/Estilos_juegos.css">
     <script src=efectos.js></script>
-    
+
 </head>
 
 <body>
@@ -15,6 +15,9 @@
         <div>
             <p><a href="index.html">Home</a></p>
         </div>
+        <div>
+            <p><a id="ran" href="">Ranking</a></p>
+        </div>
         <p>El mítico juego del ahorcado ¡Ahora para PC!</p>
         <p>¿Por qué usar lápiz y papel cuando puedes sentarte delante de una pantalla durante horas?</p>
         <p> Requisito para jugar: tener Bloq Mayus activado</p>
@@ -22,6 +25,23 @@
     <canvas id="juego1" width="1200" height="800"></canvas>
     <script src="js/ranking.js"></script>
     <script src="js/juego1.js">
+    </script>
+    <script>
+          document.querySelector("#ran").addEventListener("click", showRanking);
+
+          function showRanking(e){
+            e.preventDefault();
+            obtenerRanking("ahorcado", mostrarDatos);
+          }
+
+          function mostrarDatos(datos){
+            var out = "POSICIÓ\tNOMBRE\tPUNTOS\n---------------------------------------------------------------\n";
+            for(var i=0; i<datos.length; i++){
+              out+=`\t${i+1}\t${datos[i].player}\t${datos[i].score}\t${datos[i].time_stamp}\n`;
+            }
+            console.log(out);
+            alert(out);
+          }
     </script>
 
 
